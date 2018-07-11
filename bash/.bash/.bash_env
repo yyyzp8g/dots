@@ -1,0 +1,10 @@
+export NCURSES_NO_UTF8_ACS=1
+
+export MYPATH=/opt/me/bin
+export MYCPATH=/opt/me/cpath
+
+for d in $(find ${MYPATH} -maxdepth 1 -type d); do
+  PATH=$d:$PATH
+done
+
+export PATH

@@ -1,0 +1,41 @@
+# better search.
+bind '"\e[A": history-search-backward' 
+bind '"\e[B": history-search-forward'
+
+# menu complete
+bind "TAB:menu-complete"
+bind '"\e[Z": menu-complete-backward'
+bind "set show-all-if-ambiguous on"
+bind "set menu-complete-display-prefix on"
+
+# Preserve bash history between multiple terminals
+export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
+export HISTSIZE=100000                   # big big history
+export HISTFILESIZE=100000               # big big history
+shopt -s histappend                      # append to history, don't overwrite it
+
+# set a fancy prompt (non-color, unless we know we "want" color)
+case "$TERM" in
+    xterm-color) color_prompt=yes;;
+esac
+
+if [ -n "$force_color_prompt" ]; then
+    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+	# We have color support; assume it's compliant with Ecma-48
+	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+	# a case would tend to support setf rather than setaf.)
+	color_prompt=yes
+    else
+	color_prompt=
+    fi
+fi
+unset color_prompt force_color_prompt
+
+# Save and reload the history after each command finishes
+PROMPT_COMMAND="history -a; history -c; history -r;$PROMPT_COMMAND"
+
+# show more info in the terminal title
+PROMPT_COMMAND+='echo -ne "\033]0;${USER}@${HOSTNAME}: $(basename ${PWD})\007"'
+
+# export it
+export PROMPT_COMMAND
