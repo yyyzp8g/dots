@@ -11,10 +11,10 @@ CursorShape=0
 [General]
 Environment=TERM=xterm-256color,COLORTERM=truecolor
 Icon=/usr/share/icons/Numix-Circle-Light/48/apps/konsole.svg
-LocalTabTitleFormat=%u@%h: %d
+LocalTabTitleFormat=%u@%h
 Name=chocolate
 Parent=FALLBACK/
-RemoteTabTitleFormat=%u@%h: %d
+RemoteTabTitleFormat=%u@%h
 TerminalColumns=88
 TerminalRows=28
 
