@@ -1,8 +1,8 @@
 [Appearance]
 AntiAliasFonts=true
-BoldIntense=false
+BoldIntense=true
 ColorScheme=chocolate
-Font=Inconsolata for Powerline,11,-1,5,57,0,0,0,0,0
+Font=InconsolataKai,11,-1,5,75,0,0,0,0,0
 UseFontLineChararacters=true
 
 [Cursor Options]
