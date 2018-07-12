@@ -1,0 +1,12 @@
+# custom path
+export MYPATH=/opt/me/bin
+# custom cpath
+export MYCPATH=/opt/me/cpath
+
+# insert subdir path
+for d in $(find ${MYPATH} -maxdepth 1 -type d); do
+  PATH=$d:$PATH
+done
+
+# export path
+export PATH

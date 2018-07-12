@@ -1,0 +1,29 @@
+# enable menu and select completion
+zstyle ':completion:*' menu select 
+
+# match case insensitive
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
+# enable backward select
+bindkey '\e[Z' reverse-menu-complete
+
+# keybind for history substring search
+bindkey '^P' history-substring-search-up
+bindkey '^N' history-substring-search-down
+
+# zsh-autosuggestion conf
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=grey,underline'
+
+# memory history size
+HISTSIZE=5000
+# disk history size
+SAVEHIST=5000
+# history location
+HISTFILE=~/.zsh_history
+
+# append history
+setopt appendhistory
+# share history across terminals
+setopt sharehistory
+# append immediately
+setopt incappendhistory
