@@ -48,7 +48,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " LaTex plugin
-Plug 'lervag/vimtex'
+" Plug 'lervag/vimtex'
 
 " Easy align
 Plug 'junegunn/vim-easy-align'
@@ -252,25 +252,6 @@ let g:gruvbox_improved_warnings = 1
 colorscheme gruvbox
 
 "-------------------------------------------------------------------------------
-" Vimtex Setting
-"-------------------------------------------------------------------------------
-
-" Change tex to contex for better format
-let g:tex_flavor = "tex"
-
-" Toggle autocomplete with YouCompleteMe
-if !exists('g:ycm_semantic_triggers')
-  let g:ycm_semantic_triggers = {}
-endif
-let g:ycm_semantic_triggers.tex = g:vimtex#re#youcompleteme
-
-" use zathura
-let g:vimtex_view_method = 'zathura'
-
-" Map <F5> to compile(not map vimtex-clean)
-autocmd FileType tex,context map <F5> <plug>(vimtex-compile)
-
-"-------------------------------------------------------------------------------
 " Easy align Setting
 "-------------------------------------------------------------------------------
 
@@ -406,6 +387,9 @@ command UpdateDate :call s:update_date()
 autocmd FileType html set timeoutlen=200
 " HTML auto close tags
 autocmd FileType html inoremap <lt>/ </<C-x><C-o><Esc>==gi
+
+" compile tex
+autocmd FileType tex noremap <F5> :!latexmk %<CR>
 
 " c skeleton
 autocmd BufNewFile *.c call UltiSnips#Anon(join(readfile($HOME . "/.vim/Templates/skeleton.c"), "\n"))

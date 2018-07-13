@@ -11,7 +11,7 @@ $recorder = 1;
 $pdf_previewer = "open -a %S";
 
 # Continuous mode
-$preview_continuous_mode = 1;
+$preview_continuous_mode = 0;
 
 # Update automatically
 $pdf_update_method = 0;
