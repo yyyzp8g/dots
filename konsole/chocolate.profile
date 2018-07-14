@@ -15,7 +15,7 @@ LocalTabTitleFormat=%u@%h
 Name=chocolate
 Parent=FALLBACK/
 RemoteTabTitleFormat=%u@%h
-TerminalColumns=86
+TerminalColumns=88
 TerminalRows=26
 
 [Interaction Options]
