@@ -2,7 +2,7 @@
 AntiAliasFonts=true
 BoldIntense=true
 ColorScheme=chocolate
-Font=InconsolataKai,11,-1,5,75,0,0,0,0,0
+Font=MenloKai,10,-1,5,75,0,0,0,0,0
 UseFontLineChararacters=true
 
 [Cursor Options]
@@ -15,8 +15,8 @@ LocalTabTitleFormat=%u@%h
 Name=chocolate
 Parent=FALLBACK/
 RemoteTabTitleFormat=%u@%h
-TerminalColumns=88
-TerminalRows=28
+TerminalColumns=86
+TerminalRows=26
 
 [Interaction Options]
 OpenLinksByDirectClickEnabled=false
